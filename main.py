@@ -1,11 +1,21 @@
-class Gamestate:
-    def __init__(self):
-            self.board=[]
-            for i in ["A","B","C","D","E","F","G",]:
-                for x in [1,2,3,4,5,6]:
-                    if i!= x:
-                        self.board.append((i,x))
+class Wizard:
+     def __init__(self,name):
+          if not name:
+               raise ValueError("missing name" )
+          self.name= name
+class Student(Wizard):
+    def __init__(self,name,house):
+         super().__init__(name)
+         self.house=house
+        
+    ...
+
+class Professor(Wizard):
+     def __init__(self,name,subject):
+          super().__init__(name)
+          self.subject=subject 
 
 
-            self.redTomove = True
-            
+wizard=Wizard("Albus")
+student = Student("Harry","Gryffindor")
+professor= Professor("severus","defence against the dark arts")
